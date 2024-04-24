@@ -1,11 +1,16 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Yajra Routes
+Route::get('users', [UserController::class, 'index'])->name('test');
+// Route::get('users/yajra', [UserController::class, 'index'])->name('yajra');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
